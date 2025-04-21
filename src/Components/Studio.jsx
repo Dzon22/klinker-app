@@ -142,8 +142,8 @@ const Studio = () => {
                   <input type='text' name="emailAdressStudio" placeholder='Enter your email address' className=' text-white text-[24px] w-[740px] h-[95px] p-4 focus:outline-none backdrop-blur-[60px] border  rounded-[24px] pl-10'/>
                 </div>
 
-                <div className='bg-white px-12 py-8 rounded-[24px]'>
-                  <button className='text-[20px]  font-semibold'>Subscribe</button>
+                <div className='bg-white px-12 py-8 rounded-[24px] cursor-pointer'>
+                  <button className='text-[20px]  font-semibold cursor-pointer'>Subscribe</button>
                 </div>
               </div>
               

@@ -430,8 +430,8 @@ const Home = () => {
                 <textarea type="text" placeholder="Your Message" name="message" id="message" className="w-full h-32 resize-none outline-none" />
               </div>
 
-              <div className="p-4 cursor-pointer   bg-gradient-to-r from-[#FFE259] to-[#FFA751] rounded-xl flex justify-center">
-                <button className="text-white text-[20px] ">Envoyer le message</button>
+              <div className="p-4 cursor-pointer bg-gradient-to-r from-[#FFE259] to-[#FFA751] rounded-xl flex justify-center">
+                <button className="text-white text-[20px] cursor-pointer">Envoyer le message</button>
               </div>
             </div>
 
@@ -512,7 +512,7 @@ const Home = () => {
                   <h1 className="font-semibold text-xl mb-6">Legal</h1>
                   <ul className="flex flex-col space-y-4">
                     <li className="cursor-pointer hover:underline">Privacy Policy</li>
-                    <li className="cursor-pointer hover:underline">Terms & Services</li>
+                    <li className="cursor-pointer hover:underline whitespace-nowrap">Terms & Services</li>
                     <li className="cursor-pointer hover:underline">Team</li>
                   </ul>
                 </div>

@@ -1,13 +1,21 @@
 import klinkerLogo from '../assets/Projects/klinkerLogo.svg';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 import inkyhouse from '../assets/Projects/inkyhouse.svg';
-//import { Link } from 'react-router-dom';
 import laptop from '../assets/Projects/laptop on top.svg';
+import Note from '../assets/Projects/Note.svg';
+import klinkerStudio from '../assets/Projects/klinker studio.svg';
+import twoPhones from '../assets/Projects/twoPhones.svg';
+import Resolu from '../assets/Projects/resolu.svg';
+import arrow from '../assets/Projects/Arrow .svg'
 
 {/*import axios from "axios";
 import { useQuery } from '@tanstack/react-query'
 import { useState } from "react";*/}
 
 const Projects = () => {
+  const nav = useNavigate();
 
   {/*const {data,isLoading,isError,error}  = useQuery({
    queryKey : ['Project'],
@@ -26,16 +34,16 @@ const Projects = () => {
     <header className='flex items-center justify-between p-10  mx-10' style={{ fontFamily: 'Poppins, sans-serif' }}>
 
       {/*Logo */}
-      <div className='flex-1 justify-center ' >
-        <img src={klinkerLogo} alt="klinkerLogo"/>
+      <div className='flex-1 justify-center cursor-pointer' >
+        <img onClick={() => nav(`/`)}src={klinkerLogo} alt="klinkerLogo"/>
       </div>
 
       {/*navigation*/ }
       <nav className="flex-1 flex justify-center ">
-        <ul className="flex space-x-15 text-[24px]">
-          <li>Home</li>
-          <li>Project</li>
-          <li>Contact Us</li>
+        <ul className="flex gap-20 text-[24px]">
+          <li><Link className="hover:underline" to="/">Home</Link></li>
+          <li><Link className="hover:underline" to="/projects">Project</Link></li>
+          <li className='whitespace-nowrap hover:underline'><Link>Contact Us</Link></li>
         </ul>
       </nav>
       <div className="flex-1" />      
@@ -52,17 +60,41 @@ const Projects = () => {
 
       </div>
        {/*Projects pic*/}
-      <div className='flex items-center justify-center'>
+        <div className="flex justify-center items-center mt-30">
+          <div className="w-[976px] h-[834px] relative">
+            
+            <div className="absolute top-0 left-0">
+              <img src={laptop} alt="Laptop" />
+            </div>
+            
+            <div className="absolute top-0 right-0">
+              <img src={inkyhouse} alt="INKYHOUSE" />
 
-        <div>
-          <img src={inkyhouse}/>
+              <div className='absolute bottom-5 left-5   text-[22px] text-white hover:underline cursor-pointer'>
+                <Link to="/projects/inkyhouse"><p className='flex gap-2'>See the Project<img src={arrow}/></p></Link>
+              </div>
+              
+            </div>
+            
+            
+            <div className="absolute top-[320px] -left-16 ">
+              <img src={Note} alt="NOTY" />
+            </div>
+            
+            <div className="absolute top-[334px] right-0">
+              <img src={klinkerStudio} alt="Klinker Studio" />
+            </div>
+            
+            
+            <div className="absolute top-[1000px] left-1">
+              <img src={twoPhones} alt="Two Phones" />
+            </div>
+            
+            <div className="absolute top-[1000px] -right-7">
+              <img src={Resolu} alt="Resolu" />
+            </div>
+          </div>
         </div>
-
-        <div>
-          <img src={laptop}/>
-        </div>
-
-      </div>
     </main>
     </>
   )
