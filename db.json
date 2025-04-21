@@ -1,0 +1,64 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "random",
+      "coverImage": "/src/assets/Projects/random.svg",
+      "projectImages": [
+        
+      ],
+      "Description" : "",
+      "features": [],
+      "Reviews": []    
+    },
+    {
+      "id": 2,
+      "name": "INKYHOUSE",
+      "coverImage": "/src/assets/Projects/inkyhouse.svg",
+      "projectImages": [
+        "/src/assets/Projects/inkyhouse2.svg",
+        "/src/assets/Projects/inkyhouse3.svg"
+      ],
+      "Description" : "This project exemplifies our commitment to delivering visually appealing and technically robust digital solutions that drive business growth",
+      "features": [
+        {
+          "title": "User-Centric Design",
+          "description": "A meticulously crafted interface that enhances user experience with high-quality product visuals, intuitive navigation, and streamlined search and filter functionality."
+        },
+        {
+          "title": "Responsive Development",
+          "description": "Fully responsive design ensuring an optimal shopping experience on desktops, tablets, and smartphones."
+        },
+        {
+          "title": "Robust Functionality",
+          "description": "Integrated secure payment gateways, real-time inventory management, personalized product recommendations, and advanced order tracking, providing a seamless end-to-end experience."
+        },
+        {
+          "title": "Data-Driven Insights",
+          "description": "Built-in analytics and reporting tools empower the client to understand customer behavior and make data-driven decisions."
+        }
+      ],
+      "Reviews": [
+        {
+          "id": 1,
+          "clientName": "Imada Ahmed",
+          "clientTitle": "Owner of InkyHouse",
+          "clientImage": "/images/clients/imada.jpg",
+          "quote": "[Klinker Studio] exceeded our expectations. They delivered a robust, feature-rich ecommerce solution on time and within budget. The website has transformed our online presence, significantly improving user engagement and conversion rates. Highly recommend them for any digital project."
+        }
+      ]    
+    },
+    {
+      "id": 3,
+      "name": "Note",
+      "coverImage": "/src/assets/Projects/random.svg",
+      "projectImages": [
+        
+      ],
+      "Description" : "",
+      "features": [],
+      "Reviews": []    
+    }
+
+  ]
+}
