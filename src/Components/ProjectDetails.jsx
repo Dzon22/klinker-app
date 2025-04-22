@@ -5,17 +5,19 @@ import { useEffect, useState } from 'react';
 import inkyhouse1 from "../assets/Projects/inkyhouse2.svg";
 import inkyhouse2 from "../assets/Projects/inkyhouse3.svg";
 import userProfile from '../assets/Projects/abdouArtistpic.svg'
-
+import { Menu, X } from "lucide-react";
 function ProjectDetails() {
   const nav = useNavigate();
   const { name } = useParams()
   const [inkyhousePics, setInkyhousePics] = useState([inkyhouse1,inkyhouse2]);
   const [displayedPhoto,setDisplayedPhoto] = useState(inkyhouse1);
   const [isClicked,setIsClicked] = useState('')
+  const [isMenuOpen,setIsMenuOpen] = useState(false)
+
  return (
     <>
     {/* Header */}
-      <header className='flex items-center justify-between p-10  mx-10' style={{ fontFamily: 'Poppins, sans-serif' }}>
+      <header className='flex items-center justify-between p-10  md:mx-10' style={{ fontFamily: 'Poppins, sans-serif' }}>
   
         {/*Logo */}
         <div className='flex-1 justify-center cursor-pointer' >
@@ -23,7 +25,7 @@ function ProjectDetails() {
         </div>
   
         {/*navigation*/ }
-        <nav className="flex-1 flex justify-center ">
+        <nav className="hidden flex-1 md:flex justify-center ">
           <ul className="flex gap-20 text-[24px]">
             <li><Link className="hover:underline" to="/">Home</Link></li>
             <li><Link className="hover:underline" to="/projects">Project</Link></li>
@@ -31,7 +33,27 @@ function ProjectDetails() {
           </ul>
         </nav>
         <div className="flex-1" />      
-  
+        {/*Menu for smaller screens*/ }
+        <div onClick={() => setIsMenuOpen(!isMenuOpen) } className="md:hidden flex justify-between items-center cursor-pointer">
+          <Menu color="black" size={40}/>
+        </div>
+        {/*navigation for smaller screens*/ }
+        {isMenuOpen && (
+          <>
+          <div className="">
+            <nav className="">
+              <ul className="absolute md:hidden flex flex-col space-y-10 cursor-pointer bg-black z-50 inset-0 h-screen w-screen items-center justify-center">
+                <li><Link className="hover:underline text-white" to="/">Home</Link></li>
+                <li><Link className="hover:underline text-white" to="/projects">Project</Link></li>
+                <li className='whitespace-nowrap hover:underline text-white'><Link>Contact Us</Link></li>
+              </ul>
+            </nav>
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)}  className="md:hidden rounded p-2 absolute top-0 z-50 right-1 cursor-pointer ">
+              <X size={30} color="white"/>
+            </button>
+          </div>
+          </>
+        )}
       </header>
       {/*Main */}
       <main className=' flex justify-center flex-col items-center 'style={{ fontFamily: 'Poppins, sans-serif' }}>

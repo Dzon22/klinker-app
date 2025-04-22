@@ -39,17 +39,23 @@ import InstagramIcone from "../assets/Home/InstagramIcone.svg";
 
 import map from '../assets/Home/map.svg';
 import klinkerFooterLogo from '../assets/Home/klinkerFooterLogo.svg'
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 const Home = () => {
+
+
+  const [isMenuOpen,setIsMenuOpen] = useState(false)
+
   return(
     <>
     {/*Header*/}
-    <header className=" hidden md:flex items-center justify-between m-8 " style={{ fontFamily: 'Poppins, sans-serif' }}>
+    <header className=" flex items-center justify-between m-8 " style={{ fontFamily: 'Poppins, sans-serif' }}>
 
       <div>
         <img src={logo} alt="klinker logo" className="cursor-pointer"/>
       </div>
       {/*navigation*/ }
-      <nav>
+      <nav className="hidden md:flex">
         <ul className="flex gap-8 text-2xl  " >
           <li><Link className="hover:underline" to="/">Home</Link></li>
           <li><Link className="hover:underline" to="/projects">Projects</Link></li>
@@ -66,9 +72,42 @@ const Home = () => {
           <li><Link className="hover:underline" to="/studio">Studio</Link></li>
         </ul>
       </nav>
+      <div className="flex-1 md:hidden"></div>
+      {/*Menu for smaller screens*/ }
+      <div onClick={() => setIsMenuOpen(!isMenuOpen) } className="md:hidden  cursor-pointer">
+        <Menu color="black" size={40}/>
+      </div>
+      {/*navigation for smaller screens*/ }
+       {isMenuOpen && (
+        <>
+        <div className="">
+          <nav className="">
+            <ul className="absolute md:hidden flex flex-col space-y-10 cursor-pointer bg-black z-50 inset-0 h-screen w-screen items-center justify-center">
+              <li><Link className="hover:underline text-white" to="/">Home</Link></li>
+              <li><Link className="hover:underline text-white" to="/projects">Projects</Link></li>
+              <li>
+              <ScrollLink
+                className="hover:underline cursor-pointer text-white"
+                to="contact"
+                smooth={true}
+                duration={1200}
+              >
+                Contact Us
+              </ScrollLink>
+              </li>
+              <li><Link className="hover:underline text-white" to="/studio">Studio</Link></li>
+              <li className="hover:underline text-white" >My Account</li>
+            </ul>
+          </nav>
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)}  className="md:hidden rounded p-2 absolute top-0 z-50 right-1 cursor-pointer ">
+            <X size={30} color="white"/>
+          </button>
+        </div>
+        </>
+      )}
       {/*My account button*/}
       <div>
-        <button className="text-white bg-[#FFA300] px-[40px] py-[14px] rounded-2xl cursor-pointer " >My account</button>
+        <button className="hidden md:flex text-white bg-[#FFA300] px-[40px] py-[14px] rounded-2xl cursor-pointer flex-shrink-0" >My account</button>
       </div>
 
     </header>
@@ -130,20 +169,24 @@ const Home = () => {
       </section>
       {/*the first section (phoneView)*/}
       <section className="md:hidden">
-        <div className=" flex mt-12 mx-5">
+        <div className=" flex flex-col mt-12 mx-5">
 
           <div className="relative flex flex-col">
+
             <p className=" font-semibold  text-[45px]  ">
               Your Digital Partner
             </p>
+            <img className ="absolute -right-7 " src={iphone15Phone} alt="iphone 15 mockup"/>
+
+          </div>
+
+          <div className="relative">
             <p className="text-[15px] text-[#353535]  ">
-            We  Create . Develop<p>Innovate . Adevertise</p>
+            We  Create . Develop<br/>Innovate . Adevertise
             </p>
+            <img className ="absolute -top-9 right-17" src={manLaptopPhone} alt="man putting his hand on top of a laptop"/>
           </div>
-          <div className="">
-            <img className ="absolute left-[284px] top-[65px]" src={iphone15Phone} alt="iphone 15 mockup"/>
-            <img className ="absolute left-[168px] top-[160px]" src={manLaptopPhone} alt="man putting his hand on top of a laptop"/>
-          </div>
+         
         </div>
         
         <div className="flex justify-center mt-24">

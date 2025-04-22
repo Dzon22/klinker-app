@@ -8,16 +8,19 @@ import multipleCart from '../assets/Studio/multipleCards-cropped.svg';
 import klinkerReviews from '../assets/Studio/klinkerGoodReviews.svg';
 import purpleSquare from '../assets/Studio/purple square.svg'
 import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
+import { Menu, X } from 'lucide-react';
 
 const Studio = () => {
   const nav = useNavigate();
+  const [isMenuOpen,setIsMenuOpen] = useState(false)
+  
   return (
     <div className="bg-black min-h-screen" style={{ fontFamily: 'Poppins, sans-serif' }}>
       <div className="relative min-h-screen overflow-hidden">
         {/* Background Image */}
         <img src={backGround} alt="BackGround" className="absolute inset-0 w-full h-full object-cover z-0" />
 
-        {/* Hero Content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 space-y-8 px-4">
           <p className="text-[40px] md:text-[64px] text-white leading-snug font-jost">
             we transform ideas into breathtaking<br />
@@ -32,15 +35,17 @@ const Studio = () => {
         </div>
 
         {/* Header */}
-        <header className="absolute top-0 left-0 w-full p-6 px-10 z-20">
+        <header className="absolute top-0 left-0 w-full p-6  z-20">
+
           <div className="bg-[#D0D0D0]/10 backdrop-blur-[60px] rounded-none w-full h-full absolute inset-0 opacity-90" />
+
           <div className="relative z-10 flex flex-wrap justify-between items-center gap-4">
             
             {/* Logo */}
             <img onClick={() => nav('/')} className="cursor-pointer w-32" src={klinkerLogo} alt="klinker logo" />
 
-            {/* Nav Links */}
-            <nav className="text-white text-[18px] md:text-[24px]">
+            {/* Navigation */}
+            <nav className="hidden md:block text-white text-[18px] md:text-[24px]">
               <ul className="flex gap-6 md:gap-12">
                 <li><Link to="/" className="hover:underline">Home</Link></li>
                 <li><Link className="hover:underline">Gallerie</Link></li>
@@ -48,14 +53,39 @@ const Studio = () => {
               </ul>
             </nav>
 
-            {/* Button */}
-            <div className="p-[2px] rounded-3xl bg-gradient-to-b from-white to-[#ED1CAE]">
+            {/* get started Button */}
+            <div className="hidden md:block p-[2px] rounded-3xl bg-gradient-to-b from-white to-[#ED1CAE]">
               <button className="text-white text-[18px] md:text-[21px] rounded-3xl px-8 py-4 bg-neutral-900 backdrop-blur-[60px] bg-opacity-80 w-fit flex-shrink-0">
                 Get Started
               </button>
             </div>
+
+            {/*Menu for smaller screens*/ }
+            <div onClick={() => setIsMenuOpen(!isMenuOpen) } className="md:hidden cursor-pointer">
+              <Menu color="white" size={40}/>
+            </div>
+            
           </div>
+
         </header>
+        {/*navigation for smaller screens*/ }
+        {isMenuOpen && (
+              <>
+              <div className="">
+                <nav className="">
+                  <ul className="absolute md:hidden flex flex-col space-y-10 cursor-pointer bg-black z-50 inset-0 h-screen w-screen items-center justify-center">
+                    <li><Link to="/" className="hover:underline text-white">Home</Link></li>
+                    <li><Link className="hover:underline text-white">Gallerie</Link></li>
+                    <li><Link className="hover:underline text-white">Contact Us</Link></li>
+                    <li><Link className="hover:underline text-white">Get Started</Link></li>
+                  </ul>
+                </nav>
+                <button onClick={() => setIsMenuOpen(!isMenuOpen)}  className="md:hidden rounded p-2 absolute top-0 z-50 right-1 cursor-pointer ">
+                  <X size={30} color="white"/>
+                </button>
+              </div>
+              </>
+            )}
       </div>
 
 
