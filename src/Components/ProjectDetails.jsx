@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import klinkerLogo from '../assets/Projects/klinkerLogo.svg';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -7,6 +7,7 @@ import inkyhouse2 from "../assets/Projects/inkyhouse3.svg";
 import userProfile from '../assets/Projects/abdouArtistpic.svg'
 
 function ProjectDetails() {
+  const nav = useNavigate();
   const { name } = useParams()
   const [inkyhousePics, setInkyhousePics] = useState([inkyhouse1,inkyhouse2]);
   const [displayedPhoto,setDisplayedPhoto] = useState(inkyhouse1);
@@ -18,7 +19,7 @@ function ProjectDetails() {
   
         {/*Logo */}
         <div className='flex-1 justify-center cursor-pointer' >
-          <img onClick={() => nav(`/`)}src={klinkerLogo} alt="klinkerLogo"/>
+          <img onClick={() => nav(`/`)} src={klinkerLogo} alt="klinkerLogo"/>
         </div>
   
         {/*navigation*/ }
@@ -33,7 +34,7 @@ function ProjectDetails() {
   
       </header>
       {/*Main */}
-      <main className=' flex justify-center flex-col items-center '>
+      <main className=' flex justify-center flex-col items-center 'style={{ fontFamily: 'Poppins, sans-serif' }}>
         {/*first section*/}
         <section className='mt-30 max-w-4xl mx-auto w-full'>
           <div className=''>

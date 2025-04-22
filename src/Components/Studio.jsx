@@ -13,19 +13,19 @@ const Studio = () => {
   const nav = useNavigate();
   return (
     <div className="bg-black min-h-screen" style={{ fontFamily: 'Poppins, sans-serif' }}>
-      
-      <div className="relative h-screen overflow-hidden">
+      <div className="relative min-h-screen overflow-hidden">
         {/* Background Image */}
         <img src={backGround} alt="BackGround" className="absolute inset-0 w-full h-full object-cover z-0" />
-        
+
+        {/* Hero Content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 space-y-8 px-4">
-          <p className="text-[64px] text-white leading-snug" style={{ fontFamily: 'Jost, sans-serif' }}>
+          <p className="text-[40px] md:text-[64px] text-white leading-snug font-jost">
             we transform ideas into breathtaking<br />
             visual stories.<span className="text-white"> Film </span>
             <span className="bg-gradient-to-r from-white via-[#ED90D1] to-[#ED1CAE] bg-clip-text text-transparent">Making...</span>
           </p>
           <div className="p-[2px] rounded-3xl bg-gradient-to-b from-white to-[#ED1CAE]">
-            <button className=" cursor-pointer text-white text-[21px] rounded-3xl px-8 py-4 bg-neutral-900 backdrop-blur-[60px] bg-opacity-80 w-full h-full">
+            <button className="text-white text-[18px] md:text-[21px] rounded-3xl px-8 py-4 bg-neutral-900 backdrop-blur-[60px] bg-opacity-80 w-fit flex-shrink-0">
               Get Started
             </button>
           </div>
@@ -33,26 +33,31 @@ const Studio = () => {
 
         {/* Header */}
         <header className="absolute top-0 left-0 w-full p-6 px-10 z-20">
-          <div className="absolute inset-0 opacity-[0.86] bg-[#D0D0D0]/10 backdrop-blur-[60px] rounded-none"></div>
-          <div className="flex justify-between items-center relative z-10">
-            {/*logo*/}
-            <img onClick={() => nav(`/`)}className="cursor-pointer" src={klinkerLogo} alt="klinker logo" />
+          <div className="bg-[#D0D0D0]/10 backdrop-blur-[60px] rounded-none w-full h-full absolute inset-0 opacity-90" />
+          <div className="relative z-10 flex flex-wrap justify-between items-center gap-4">
+            
+            {/* Logo */}
+            <img onClick={() => nav('/')} className="cursor-pointer w-32" src={klinkerLogo} alt="klinker logo" />
 
-            <nav>
-              <ul className="text-white flex gap-18 text-[24px] ">
-                <li><Link to="/" className='hover:underline cursor-pointer'>Home</Link></li>
-                <li><Link className='hover:underline cursor-pointer'>Gallerie</Link></li>
-                <li><Link className='hover:underline cursor-pointer'>Contact Us</Link></li>
+            {/* Nav Links */}
+            <nav className="text-white text-[18px] md:text-[24px]">
+              <ul className="flex gap-6 md:gap-12">
+                <li><Link to="/" className="hover:underline">Home</Link></li>
+                <li><Link className="hover:underline">Gallerie</Link></li>
+                <li><Link className="hover:underline">Contact Us</Link></li>
               </ul>
             </nav>
+
+            {/* Button */}
             <div className="p-[2px] rounded-3xl bg-gradient-to-b from-white to-[#ED1CAE]">
-              <button className="cursor-pointer text-white text-[21px] rounded-3xl px-8 py-4 bg-neutral-900 backdrop-blur-[60px] bg-opacity-80 w-full h-full">
+              <button className="text-white text-[18px] md:text-[21px] rounded-3xl px-8 py-4 bg-neutral-900 backdrop-blur-[60px] bg-opacity-80 w-fit flex-shrink-0">
                 Get Started
               </button>
             </div>
           </div>
         </header>
       </div>
+
 
       {/* MAIN  */}
       <main className=" py-20" style={{ fontFamily: 'Poppins, sans-serif' }}>

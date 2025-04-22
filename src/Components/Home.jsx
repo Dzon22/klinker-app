@@ -2,6 +2,8 @@ import logo from "../assets/Home/klinker-logo.png";
 import manLaptopPhone from "../assets/Home/manLaptopPhone.png";
 import iphone15Phone from "../assets/Home/iphone15RosePhone.png";
 import { Link } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
+
 import manLaptop from "../assets/Home/manLaptop.png";
 import iphone15 from "../assets/Home/iphone15Rose.png";
 import yellowline from '../assets/Home/yellowLinePc.svg';
@@ -51,7 +53,16 @@ const Home = () => {
         <ul className="flex gap-8 text-2xl  " >
           <li><Link className="hover:underline" to="/">Home</Link></li>
           <li><Link className="hover:underline" to="/projects">Projects</Link></li>
-          <li><Link className="hover:underline" to="/contactUs">Contact Us</Link></li>
+          <li>
+          <ScrollLink
+            className="hover:underline cursor-pointer"
+            to="contact"
+            smooth={true}
+            duration={1200}
+          >
+            Contact Us
+          </ScrollLink>
+          </li>
           <li><Link className="hover:underline" to="/studio">Studio</Link></li>
         </ul>
       </nav>
@@ -402,7 +413,7 @@ const Home = () => {
 
       </section>
       {/*the fifth section (Contact Us)*/}
-      <section className="mt-40" >
+      <section className="mt-40" id="contact" >
 
         <div className="flex flex-col items-center mb-20 md:max-w-5xl md:mx-auto mx-2">
           <p className="  text-[40px] md:text-[62px] text-[#FABB18]" >Contact Us</p>

@@ -35,7 +35,7 @@ const Projects = () => {
 
       {/*Logo */}
       <div className='flex-1 justify-center cursor-pointer' >
-        <img onClick={() => nav(`/`)}src={klinkerLogo} alt="klinkerLogo"/>
+        <img onClick={() => nav(`/`)} src={klinkerLogo} alt="klinkerLogo"/>
       </div>
 
       {/*navigation*/ }
