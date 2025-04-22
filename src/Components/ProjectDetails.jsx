@@ -91,6 +91,12 @@ function ProjectDetails() {
             </div>
           </div>
         </section>
+        {/*third section(discover more)*/}
+        <section className="mt-20 max-w-4xl mx-auto  ">
+          <h1 className='text-[40px] font-bold text-[#0a0a0a] mb-6'>Discover More</h1>
+
+        </section>
+         
        
       </main>
 
