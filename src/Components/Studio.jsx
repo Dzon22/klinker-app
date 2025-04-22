@@ -96,14 +96,14 @@ const Studio = () => {
 
           <div className='flex items-center justify-center'>
             <div className=" grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto gap-20 text-white">
-              <div className='space-y-8 w-[500px]'>
+              <div className='space-y-8 md:w-[500px]'>
 
                 <div className='pl-15 whitespace-nowrap'>
-                  <h1 className='text-[60px]'>what we offer</h1>
-                  <p className='text-[25px] text-[#9C9C9C]'>we have 3 diffrent services at our studio</p>
+                  <h1 className='text-[40px] md:text-[60px]'>what we offer</h1>
+                  <p className='text-[15px] md:text-[25px] text-[#9C9C9C]'>we have 3 diffrent services at our studio</p>
                 </div>
 
-                <div className='flex flex-col space-y-8 text-[20px] '>
+                <div className='flex flex-col space-y-8 text-[15px] md:text-[20px] '>
 
                   <div className='flex gap-4'>
                     <img src={purpleStar} alt='purple star' />
@@ -169,23 +169,26 @@ const Studio = () => {
             Subscribe with your email to get the latest news, updates, and exclusive content from Klinker Studio.</p>
           </div>
 
-          <div className='flex justify-center relative pt-20'>
-            <img src={purpleSquare} alt="purpleSquare" />
-
-              <div className='flex items-center gap-10 absolute   top-1/2'>
-                <div className=''>
-                  <input type='text' name="emailAdressStudio" placeholder='Enter your email address' className=' text-white text-[24px] w-[740px] h-[95px] p-4 focus:outline-none backdrop-blur-[60px] border  rounded-[24px] pl-10'/>
-                </div>
-
-                <div className='bg-white px-12 py-8 rounded-[24px] cursor-pointer'>
-                  <button className='text-[20px]  font-semibold cursor-pointer'>Subscribe</button>
-                </div>
+          <div className="relative flex justify-center pt-20">
+            {/* Background Image */}
+            <img
+              src={purpleSquare} alt="purpleSquare"
+              className="absolute top-0 left-0 w-full h-full object-cover z-0"  
+            />
+            
+            {/*Form */}
+            <div className="relative z-10 flex md:flex-row flex-col items-center gap-10  top-1/2">
+              <div className="">
+                <input
+                  type="text" name="emailAdressStudio" placeholder="Enter your email address" className="text-white md:text-[24px] md:w-[740px] md:h-[95px] p-4 focus:outline-none backdrop-blur-[60px] border rounded-[24px] pl-10"
+                />
               </div>
-              
 
+              <div className="bg-white md:px-12 md:py-8 px-4 py-2 rounded-[24px] cursor-pointer">
+                <button className="text-[20px] font-semibold cursor-pointer">Subscribe</button>
+              </div>
+            </div>
           </div>
-          
-          <></>
           
         </section>
       </main>
